@@ -1,0 +1,22 @@
+{
+    "name": "bombayworks/currycms-project-base",
+    "description": "Standard project template for Curry CMS",
+    "type": "project",
+    "license": "GPL-3.0+",
+    "autoload": {
+        "psr-0": { "": "cms/include/" }
+    },
+    "require": {
+        "php": ">=5.3.7",
+        "bombayworks/currycms": "1.1.*",
+        "oyatel/minify": "@dev",
+				"monolog/monolog": "1.18.*",
+				"nesbot/carbon": "1.21.*",
+				"phing/phing": "2.13.*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        }
+    }
+}
