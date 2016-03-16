@@ -1,4 +1,2 @@
-currycms-project-base
-=====================
-
-Standard project template for Curry CMS
+# curry-demo-project
+A simple website project that demonstrates capabilities of Curry cms.
