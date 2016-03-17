@@ -36,6 +36,7 @@ return array (
     'backend' => 
     array (
       'noauth' => false,
+      'templatePage' => 2,
     ),
     'errorPage' => 
     array (
