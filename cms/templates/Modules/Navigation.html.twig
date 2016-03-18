@@ -1,0 +1,12 @@
+{% if page.subpages %}
+<nav>
+	<ul class="clearfix">
+		{% block homepage %}
+		<li><a {{curry.page.Url == '/' ? 'class="active"' : ''}} href="/">Home</a></li>
+		{% endblock homepage %}
+		{% for page in page.subpages %}
+		<li><a {{page.IsActiveSubpage?'class="active"':''}} href="{{page.Url}}">{{page.Name}}</a></li>
+		{% endfor %}
+	</ul>
+</nav>
+{% endif %}
