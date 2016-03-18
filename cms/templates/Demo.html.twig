@@ -1,0 +1,17 @@
+{% extends "GenericPage.html.twig" %}
+
+{% block content %}
+	<div class="sec-nav">
+		{% placeholder 'demo-pages' %}
+	</div>
+	
+	<div class="viewport">
+	{% block viewport %}
+		<article>
+			{% placeholder 'article' %}
+		</article>
+    
+        {% placeholder 'content' %}
+	{% endblock viewport %}
+	</div>
+{% endblock content %}

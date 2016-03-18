@@ -1,0 +1,19 @@
+{% extends "Base.html.twig" %}
+
+{% block body %}
+	<div id="main">
+		<header>
+			<h1>{{ curry.ProjectName }}</h1>
+			{% placeholder 'primary-navigation' %}
+		</header>
+		
+		<section class="content clearfix">
+		{% block content "Override" %}
+		</section>
+		
+		<footer>
+			<p>Proudly powered by Curry CMS, &copy;Bombayworks AB</p>
+		</footer>
+	</div>
+	
+{% endblock body %}

@@ -12,9 +12,6 @@
 </head>
 
 <body id="{{curry.page.BodyId}}">
-{% block body %}
-  <h1>{{curry.ProjectName}}</h1>
-  {% placeholder 'content' %}
-{% endblock %}
+{% block body "Override" %}
 </body>
 </html>
