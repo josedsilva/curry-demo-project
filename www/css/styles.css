@@ -1,0 +1,293 @@
+
+body {
+	background: url(../images/site/vapors.png) repeat scroll 0 0 #F0EFEC;
+	color: black;
+	font: 10pt/1.5em "Book Antiqua",Georgia,"Times New Roman",serif;
+	word-spacing: 0.05em;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px dotted #DDDDDD;
+}
+
+p {}
+a { color: #867348; }
+
+h1, h2, h3 {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	line-height: normal;
+}
+h1 {
+	font-size: 14pt;
+	margin: 0.8em 0;
+}
+h2 {
+	font-size: 12pt;
+	margin: 0.5em 0;
+}
+h3 {
+	font-size: 10pt;
+	margin: 0.4em 0;
+}
+blockquote {
+	border-bottom: 2px solid #CCAA99;
+	border-top: 2px solid #CCAA99;
+	margin: 1ex 2em;	
+}
+	blockquote * {
+		margin: 0;
+		padding: 1ex;
+	}
+pre {
+	background: none #FCFAEC;
+	border: 1px solid #FEEAB8;
+	padding: 1ex;
+	overflow: hidden;
+}
+	pre > code {
+		display: block;
+		width: 100%;
+		margin:0;
+	}
+code {
+	letter-spacing: normal;
+	word-spacing: -0.2ex;
+	line-height: 1.2;
+	text-transform: none;
+}
+
+#main {
+	width: 880px;
+	margin:20px auto;
+	box-shadow: 0 2px 4px #DDDDDD;
+	border-radius: 5px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	background:none white;
+}
+#main > header {
+	margin:0;
+	padding: 0 40px;
+	background: none white;
+	border-bottom: 1px solid #DDDDDD;
+	
+background: #f7f7f7;
+background: -moz-linear-gradient(90deg,  #f7f7f7 0%, #fafafa 25%, #fefefe 50%, #ffffff 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f7f7f7), color-stop(25%,#fafafa), color-stop(50%,#fefefe), color-stop(100%,#ffffff));
+background: -webkit-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: -o-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: -ms-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=1 );
+
+}
+	#main > header h1 {
+		line-height: normal;
+		color: #A18E53;
+		text-shadow: 0 2px 2px #DDDDDD;
+		font-size: 32pt;
+		font-weight: normal;
+		margin:0;
+		padding:30px 0;
+	}
+#main > .content {
+	background: none white;
+	padding:20px 40px;
+	width: auto;
+	min-height: 600px;
+}
+#main nav {
+	margin-top: -20px;
+  padding: 0 0 10px 0;
+}
+	#main nav > ul {
+		margin:0;
+		padding:0;
+	}
+		#main nav > ul > li {
+			display: inline;
+			font-family: "Lucida Grande","Lucida Unicode",sans-serif;
+			list-style:none;
+			margin-right:0.8em;
+		}
+			#main nav > ul > li > a {
+				font-size: 11pt;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			#main nav > ul > li > a.active {
+				color: #CEC05F;
+			}
+			#main nav > ul > li > a:hover {
+				text-decoration: underline;
+			}
+
+.toc {
+	border-bottom: 1px dashed #DDCCBB;
+	margin: 1em 0 1.5em 0;
+	padding-bottom: 1em;
+	padding-left: 2.5em;
+}
+
+#main footer {
+background: #f7f7f7;
+background: -moz-linear-gradient(90deg,  #f7f7f7 0%, #fafafa 25%, #fefefe 50%, #ffffff 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f7f7f7), color-stop(25%,#fafafa), color-stop(50%,#fefefe), color-stop(100%,#ffffff));
+background: -webkit-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: -o-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: -ms-linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+background: linear-gradient(90deg,  #f7f7f7 0%,#fafafa 25%,#fefefe 50%,#ffffff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=1 );
+	
+	padding: 0.5em 40px;
+}
+#main footer > p {
+	margin:0;
+	padding:0;
+	font-size: 9pt;
+	font-family: status-bar,Times New Roman,serif;
+	text-align: right;
+	color: #A8955D;
+	/*text-shadow:0px 1px 2px #D4A357;*/
+}
+
+.content .sec-nav {
+	 width: 20%;
+	 float: left;
+}
+
+#main .sec-nav nav {
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+#main .sec-nav nav ul {
+	
+}
+#main .sec-nav nav ul li {
+	display: block;
+	margin: 0;
+}
+#main .sec-nav nav a {
+	font-size: 9pt;
+	font-weight: normal;
+	color: #9A8556 !important;
+}
+#main .sec-nav nav a.active {
+	text-shadow: none;
+	text-decoration: underline;
+}
+
+.content .viewport {
+	width: 80%;
+	float: left;
+}
+
+.wrapper {
+	clear: both;
+}
+
+.content .left, .content .right {
+	width: 50%;
+	float: left;
+}
+.content .right .sec-nav {
+	width: 100%;
+	clear: both;
+}
+
+.recurse-navigation a {
+	text-decoration: none;
+}
+
+.zend_form dd {
+	margin: 0;
+}
+.zend_form dt {
+	margin: 0;
+}
+.zend_form dt:empty {
+	display: none;
+}
+.zend_form dt label {
+	float: left;
+	font-weight: normal;
+	width: 40%;
+	margin-bottom: 1em;
+}
+.zend_form dd fieldset {
+	clear: both;
+	padding: 5px;
+	border: 1px solid #DDDDDD;
+}
+.zend_form dd fieldset legend {
+	padding: 10px 0;
+}
+.zend_form input {
+	width: 50%;
+	margin-bottom: 1em;
+}
+.zend_form .errors {
+  color: red;
+  font-family: monospace;
+}
+#description-label label {
+	clear: both;
+	width: 100%;
+}
+#description {
+	width: 90%;
+	clear: both;
+	margin-bottom: 1em;
+}
+#games-label label {
+	width: 100%;
+	clear: both;
+}
+#games-element input[type=checkbox] {
+	width: auto;
+}
+#captcha-label label {
+	clear: both;
+	width: 100%;
+}
+#captcha-label + dd {
+	clear: both;
+}
+#pid-label, #demographics-label, #userinfo-label, #preferences-label {
+	display: none;
+}
+.ui-widget {
+	margin: 10px 0;
+}
+ul.elo-images > li {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin:1em 0.5em;
+  list-style: none;
+}
+ul.elo-images > li:hover {
+  opacity: 0.5;
+}
+ul.elo-images > li.selected > div {
+  border:4px solid red;
+}
+ul.elo-images > li div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+ul.elo-images > li a {
+  display: block;
+}
+ul.elo-images > li span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+}
