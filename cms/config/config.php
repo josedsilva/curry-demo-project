@@ -2,7 +2,7 @@
 return array (
   'curry' => 
   array (
-    'name' => 'Curry CMS',
+    'name' => 'Curry cms demo project',
     'adminEmail' => 'webmaster@domain.com',
     'forceDomain' => false,
     'statistics' => false,
