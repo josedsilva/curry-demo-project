@@ -1,4 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<database package="project" name="curry">
+<database package="project" name="curry" defaultIdMethod="native">
+	
+	<table name="city">
+		<column name="city_id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+		<column name="name" required="true" primaryString="true" />
+	</table>
+	
+	<table name="recycling_type">
+		<column name="recycling_type_id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+		<column name="name" type="VARCHAR" size="255" required="true" primaryString="true" />
+	</table>
+	
+	<!-- recycling companies -->
+	<table name="company">
+		<column name="company_id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+		<column name="name" type="VARCHAR" size="255" required="true" primaryString="true" />
+		<column name="org_number" type="VARCHAR" size="25" required="true" />
+		<column name="city_id" type="INTEGER" required="true" />
+		<foreign-key foreignTable="city" onDelete="cascade" onUpdate="cascade">
+			<reference local="city_id" foreign="city_id" />
+		</foreign-key>
+		
+		<column name="pincode" type="VARCHAR" size="10" required="true" />
+		<column name="contact_person" type="VARCHAR" size="255" required="true" />
+		<column name="telephone" type="VARCHAR" size="25" required="true" />
+		<column name="email" type="VARCHAR" size="64" required="true" />
+		
+		<validator column="email">
+			<rule name="match" value="/^.+@.+\..+$/" message="Please enter a valid email address." />
+		</validator>
+	</table>
+	
+	<!-- Many-Many relationship between companies and recycling types -->
+	<table name="co_rt" idMethod="native" isCrossRef="true">
+		<column name="company_id" type="INTEGER" required="true" autoIncrement="false" primaryKey="true" />
+		<foreign-key foreignTable="company" onDelete="cascade" onUpdate="cascade">
+			<reference local="company_id" foreign="company_id" />
+		</foreign-key>
+		
+		<column name="recycling_type_id" type="INTEGER" required="true" autoIncrement="false" primaryKey="true" />
+		<foreign-key foreignTable="recycling_type" onDelete="cascade" onUpdate="cascade">
+			<reference local="recycling_type_id" foreign="recycling_type_id" />
+		</foreign-key>
+	</table>
+	
+	<!-- quotations -->
+	<table name="quote">
+		<column name="quote_id" type="INTEGER" required="true" autoIncrement="true" primaryKey="true" />
+		<column name="status" type="ENUM" valueSet="new,sent,viewed" required="true" />
+		<column name="heading" type="VARCHAR" size="255" />
+		<column name="service_period" type="ENUM" valueSet="no_time_limit,one_week,one_month,six_months" required="true" />
+		<column name="recycling_type_id" type="INTEGER" required="true" />
+		<foreign-key foreignTable="recycling_type" onDelete="cascade" onUpdate="cascade">
+			<reference local="recycling_type_id" foreign="recycling_type_id" />
+		</foreign-key>
+		
+		<column name="client_name" type="VARCHAR" size="64" required="true" />
+		<column name="client_email" type="VARCHAR" size="128" required="true" />
+		<column name="client_telephone" type="VARCHAR" size="255" required="true" />
+		<column name="client_city_id" phpName="ClientCity" type="INTEGER" required="true" />
+		<foreign-key foreignTable="city" onDelete="cascade" onUpdate="cascade">
+			<reference local="client_city_id" foreign="city_id" />
+		</foreign-key>
+		
+		<validator column="client_email">
+			<rule name="match" value="/^.+@.+\..+$/" message="Please enter a valid email address." />
+		</validator>
+		
+		<behavior name="timestampable" />
+	</table>
+	
+	<!-- which companies have viewed the quote and when -->
+	<table name="quote_company" isCrossRef="true">
+		<column name="quote_id" type="INTEGER" required="true" autoIncrement="false" primaryKey="true" />
+		<foreign-key foreignTable="quote" onDelete="cascade" onUpdate="cascade">
+			<reference local="quote_id" foreign="quote_id" />
+		</foreign-key>
+		
+		<column name="company_id" type="INTEGER" required="true" autoIncrement="false" primaryKey="true" />
+		<foreign-key foreignTable="company" onDelete="cascade" onUpdate="cascade">
+			<reference local="company_id" foreign="company_id" />
+		</foreign-key>
+		
+		<behavior name="timestampable" />
+	</table>
 	
 </database>
