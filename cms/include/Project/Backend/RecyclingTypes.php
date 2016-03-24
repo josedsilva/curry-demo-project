@@ -1,6 +1,6 @@
 <?php
 
-class Project_Backend_Cities extends Curry_Backend
+class Project_Backend_RecyclingTypes extends Curry_Backend
 {
     /**
      * Create a group icon in the Admin module panel
@@ -18,13 +18,9 @@ class Project_Backend_Cities extends Curry_Backend
      */
     public function showMain()
     {
-        $list = new Curry_ModelView_List('City');
+        $list = new Curry_ModelView_List('RecyclingType');
         
         $list->show($this);
     }
     
-    /*public function showDummyView()
-    {
-        echo 'Dummy view';
-    }*/
 }
