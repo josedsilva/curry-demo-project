@@ -24,6 +24,7 @@ class Project_Backend_Companies extends Curry_Backend
             ->groupBy('cr.CompanyId');
         $list = new Curry_ModelView_List($q, array(
             'columns' => array(
+                'pincode' => false,
                 'NbrRt' => array(
                     // assign action to this column item.
                     'action' => 'action_recycling_types',
