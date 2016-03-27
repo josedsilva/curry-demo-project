@@ -58,8 +58,8 @@
 		<column name="client_name" type="VARCHAR" size="64" required="true" />
 		<column name="client_email" type="VARCHAR" size="128" required="true" />
 		<column name="client_telephone" type="VARCHAR" size="255" required="true" />
-		<column name="client_city_id" phpName="ClientCity" type="INTEGER" required="true" />
-		<foreign-key foreignTable="city" onDelete="cascade" onUpdate="cascade">
+		<column name="client_city_id" type="INTEGER" required="true" />
+		<foreign-key foreignTable="city" phpName="ClientCity" onDelete="cascade" onUpdate="cascade">
 			<reference local="client_city_id" foreign="city_id" />
 		</foreign-key>
 		
