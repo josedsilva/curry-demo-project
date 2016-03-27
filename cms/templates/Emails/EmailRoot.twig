@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="{{curry.ContentType}}; charset={{curry.Encoding}}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="{{ curry.page.meta.inherited.Keywords }}" />
+	<meta name="description" content="{{ curry.page.meta.inherited.Description }}" />
+	<title>{% block title curry.page.meta.Title|default(curry.page.Name~" - "~curry.ProjectName) %}</title>
+	<base href="{{curry.BaseUrl}}">
+	
+<style type="text/css">
+.main, body {
+    background-color: #f2f2f2;
+    color: #7d7d7d;
+    font: 10pt/1.5em Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+}
+a {
+    text-decoration: none;
+    color: #3ca959;
+}
+p {
+    margin: 5px 0;
+}
+a:hover {
+    text-decoration: underline;
+}
+table {
+    padding: 0;
+    border:0 none;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    font: inherit;
+}
+.container {
+    width: 700px;
+}
+</style>
+</head>
+<body>
+<div class="main">
+	<table>
+		<tr>
+			<td align="center">
+				<table class="container">
+					<tr>
+						<td>
+							{% placeholder 'content' %}
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
