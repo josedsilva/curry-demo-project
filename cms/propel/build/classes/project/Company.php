@@ -34,7 +34,7 @@ class Company extends BaseCompany
         );
         
         $mail = Curry_Mail::createFromPage($mailTpl, null, $globals);
-        $mail->addTo($this->getClientEmail(), $this->getClientName());
+        $mail->addTo($this->getEmail(), $this->getContactPerson());
         $mail->setFrom(Curry_Core::$config->curry->adminEmail, Curry_Core::$config->curry->projectName);
         $mail->setSubject($subject);
         try {
