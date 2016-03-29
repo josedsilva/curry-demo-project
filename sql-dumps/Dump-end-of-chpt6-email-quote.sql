@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.46, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: curry_demo
 -- ------------------------------------------------------
--- Server version	5.5.47-0ubuntu0.14.04.1
+-- Server version	5.5.46-0ubuntu0.14.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -91,7 +91,7 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,'Recycling United Scandinavia','12345678',0,'12345678','Jose D\'Silva','12345678','jose.dsilva@bombayworks.se'),(2,'Bombayworks Recycling','78654389',0,'123567','Test','12346789','test@test.com');
+INSERT INTO `company` VALUES (1,'Recycling United Scandinavia','12345678',1,'12345678','Jose D\'Silva','12345678','jose.dsilva@bombayworks.se'),(2,'Bombayworks Recycling','78654389',1,'123567','Test','12346789','test@test.com');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -593,6 +593,27 @@ INSERT INTO `page_revision` VALUES (1,1,NULL,4,'Base (auto-created)',NULL,'2016-
 UNLOCK TABLES;
 
 --
+-- Table structure for table `propel_migration`
+--
+
+DROP TABLE IF EXISTS `propel_migration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `propel_migration` (
+  `version` int(11) DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `propel_migration`
+--
+
+LOCK TABLES `propel_migration` WRITE;
+/*!40000 ALTER TABLE `propel_migration` DISABLE KEYS */;
+/*!40000 ALTER TABLE `propel_migration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `quote`
 --
 
@@ -623,7 +644,7 @@ CREATE TABLE `quote` (
 
 LOCK TABLES `quote` WRITE;
 /*!40000 ALTER TABLE `quote` DISABLE KEYS */;
-INSERT INTO `quote` VALUES (1,0,'Test quote 1',0,1,'Jose Dsilva','jose.dsilva@bombayworks.se','123456',1,'2016-03-27 12:17:04','2016-03-27 13:17:13');
+INSERT INTO `quote` VALUES (1,1,'Test quote 1',0,3,'Jose Dsilva','jose.dsilva@bombayworks.se','123456',1,'2016-03-27 12:17:04','2016-03-29 19:16:04');
 /*!40000 ALTER TABLE `quote` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -836,4 +857,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-27 18:21:55
+-- Dump completed on 2016-03-29 20:05:52
