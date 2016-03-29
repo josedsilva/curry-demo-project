@@ -22,7 +22,24 @@ class Project_Backend_Companies extends Curry_Backend
             ->leftJoinCoRt('cr')
             ->withColumn('COUNT(cr.RecyclingTypeId)', 'NbrRt')
             ->groupBy('cr.CompanyId');
+        
+        // we want the City relation to show (All foreign keys are hidden by default).
+        $mf = new Curry_Form_ModelForm('Company', array(
+            'withRelations' => array('City'),
+            'columnElements' => array(
+                'relation__city' => array('select', array(
+                    'label' => 'City',
+                    'multiOptions' => array(null => '[ Select ]') + CityQuery::create()
+                        ->orderByName()
+                        ->find()
+                        ->toKeyValue('PrimaryKey', 'Name'),
+                    'required' => true,
+                    'order' => 0,
+                )),
+            ),
+        ));
         $list = new Curry_ModelView_List($q, array(
+            'modelForm' => $mf,
             'columns' => array(
                 'pincode' => false,
                 'NbrRt' => array(
