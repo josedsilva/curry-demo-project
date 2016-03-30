@@ -23,7 +23,7 @@ class Project_Module_QuoteRequest extends Curry_Module
         
         $form = new Curry_Form_ModelForm('Quote', array(
             'class' => 'quote-request-form',
-            'withRelations' => array('RecyclingType', 'City'),
+            'withRelations' => array('RecyclingType', 'ClientCity'),
             'columnElements' => array(
                 'heading' => array('text', array(
                     'required' => true,
@@ -41,7 +41,7 @@ class Project_Module_QuoteRequest extends Curry_Module
                         ->toKeyValue('PrimaryKey', 'Name'),
                     'required' => true,
                 )),
-                'relation__city' => array('select', array(
+                'relation__clientcity' => array('select', array(
                     'multiOptions' => array(null => '[ Select ]') + CityQuery::create()
                         ->orderByName()
                         ->find()
