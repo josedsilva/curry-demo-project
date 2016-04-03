@@ -29,7 +29,10 @@ class Company extends BaseCompany
             'company' => $this,
             'quote' => $quote,
             'buy_quote_link' => url(self::BUY_QUOTE_PAGE_LINK, array(
-                'qid' => $this->getPrimaryKey()
+                // identify the company
+                'cid' => $this->getPrimaryKey(),
+                // identify the quote
+                'qid' => $quote->getPrimaryKey(),
             ))->getAbsolute('&', true),
         );
         
