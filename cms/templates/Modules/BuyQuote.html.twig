@@ -1,0 +1,10 @@
+{% if form is defined %}
+<p>Hello {{ company.ContactPerson }},</p>
+<p>You wish to buy the quote "{{ quote.Heading }}" having recycling type "{{ quote.RecyclingType.Name }}" on behalf of company "{{ company.Name }}".</p>
+<p>You have to agree to the <a href="">Terms and Conditions</a> and click the "Buy" button below to proceed.</p>
+
+{{ form | raw }}
+
+{% else %}
+<p>Thank you {{ company.ContactPerson }}, we have registered your purchase.
+{% endif %}
