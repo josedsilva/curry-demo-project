@@ -37,6 +37,29 @@ class Project_Backend_QuotesSilva extends Silva_Backend
         return $vw;
     }
     
+    protected function getFilterForm(Silva_View $vw)
+    {
+        $filters = array(
+            'status' => isset($_GET['status']) ? $_GET['status'] : '',
+        );
+        
+        $filterForm = Silva_View::getFilterForm(array(
+            'status' => array('select', array(
+                'label' => 'Filter by quote status',
+                'multiOptions' => array('' => '[ All statuses ]') + array(
+                    'new' => 'New',
+                    'sent' => 'Sent',
+                    'viewed' => 'Viewed',
+                ),
+                'value' => $filters['status'],
+                'onchange' => Silva_View::JS_SUBMIT_FORM,
+            )),
+        ));
+        // attach the filter form to the view.
+        $vw->setFilterForm($filterForm);
+        return $filters;
+    }
+    
     /**
      * Manipulate the Quotes grid.
      * This is a callback function or a hook called by Silva
@@ -47,6 +70,16 @@ class Project_Backend_QuotesSilva extends Silva_Backend
      */
     public function onQuoteGridInit(Silva_View $vw)
     {
+        $filters = $this->getFilterForm($vw);
+        
+        // we need to define our query when we create custom filters
+        // since Silva doesn't know which custom filters you have defined.
+        $q = QuoteQuery::create();
+        
+        if ($filters['status']) {
+            $q->filterByStatus($filters['status']);
+        }
+        
         // buttons in Flexigrid are the same things as "actions" in ModelView.
         $buttons = array(
             Silva_View::BUTTON_AED,
@@ -70,7 +103,8 @@ class Project_Backend_QuotesSilva extends Silva_Backend
                 ),
             ),
         );
-        $grid = $vw->getGrid($buttons);
+        // We inform Silva to use our customized query ($q) instead of automatically creating one.
+        $grid = $vw->getGrid($buttons, null, $q);
         $grid->setColumnOption(array('created_at', 'updated_at'), 'hide', true);
         $grid->moveColumn('heading', 0);
     }
