@@ -9,7 +9,31 @@ class Project_Backend_Quotes extends Curry_Backend
         return 'Demo ModelView';
     }
     
-    public function showMain()
+    
+    protected function getFilterForm(array $filters)
+    {
+        $form = new Curry_Form(array(
+            'action' => (string) url('', $_GET),
+            'enctype' => Zend_Form::ENCTYPE_URLENCODED,
+            'method' => 'post',
+            'class' => 'filters-form',
+            'elements' => array(
+                'status' => array('select', array(
+                    'label' => 'Filter by quote status',
+                    'multiOptions' => array('' => '[ All statuses ]') + array(
+                        'new' => 'New',
+                        'sent' => 'Sent',
+                        'viewed' => 'Viewed',
+                    ),
+                    'value' => $filters['status'],
+                )),
+                'do_filter' => array('submit', array('label' => 'Filter')),
+            ),
+        ));
+        return $form;
+    }
+    
+    protected function getMainList($filters = null)
     {
         $mf = new Curry_Form_ModelForm('Quote', array(
             'withRelations' => array('RecyclingType', 'ClientCity'),
@@ -20,21 +44,28 @@ class Project_Backend_Quotes extends Curry_Backend
                 'updated_at' => false,
                 'relation__recyclingtype' => array('select', array(
                     'multiOptions' => array(null => '[ Select ]') + RecyclingTypeQuery::create()
-                        ->orderByName()
-                        ->find()
-                        ->toKeyValue('PrimaryKey', 'Name'),
+                    ->orderByName()
+                    ->find()
+                    ->toKeyValue('PrimaryKey', 'Name'),
                     'required' => true,
                 )),
                 'relation__clientcity' => array('select', array(
                     'multiOptions' => array(null => '[ Select ]') + CityQuery::create()
-                        ->orderByName()
-                        ->find()
-                        ->toKeyValue('PrimaryKey', 'Name'),
+                    ->orderByName()
+                    ->find()
+                    ->toKeyValue('PrimaryKey', 'Name'),
                     'required' => true,
                 )),
             ),
         ));
-        $list = new Curry_ModelView_List('Quote', array(
+        
+        // custom query to handle filters
+        $q = QuoteQuery::create();
+        // handle filters
+        if (isset($filters['status']) && $filters['status'] != '') {
+            $q->filterByStatus( $filters['status']);
+        }
+        $list = new Curry_ModelView_List($q, array(
             'modelForm' => $mf,
             // hide group of list columns
             'hide' => array('client_email', 'client_telephone', 'created_at', 'updated_at'),
@@ -61,6 +92,40 @@ class Project_Backend_Quotes extends Curry_Backend
                 ),
             ),
         ));
+        return $list;
+    }
+    
+    public function showMain()
+    {
+        $filters = array(
+            'status' => isset($_GET['status']) ? $_GET['status'] : '',
+        );
+        $fltrForm = $this->getFilterForm($filters);
+        if (isPost()) {
+            if ($fltrForm->isValid($_POST)) {
+                $filters = $fltrForm->getValues(true);
+                unset($filters['csrf']);
+                $namespace = new Zend_Session_Namespace(__METHOD__);
+                foreach ($filters as $key => $val) {
+                    $namespace->{$key} = $val;
+                }
+            } elseif (isset($_GET['action']) && $_GET['action'] == 'json') {
+                $namespace = new Zend_Session_Namespace(__METHOD__);
+                foreach ($filters as $key => $val) {
+                    if (isset($namespace->{$key})) {
+                        $filters[$key] = $namespace->{$key};
+                    }
+                }
+            }
+        } elseif (Zend_Session::namespaceIsset(__METHOD__)) {
+            Zend_Session::namespaceUnset(__METHOD__);
+        }
+        
+        if (!isset($_GET['action'])) {
+            // show filters only on main view and not on child views.
+            $this->addMainContent($fltrForm);
+        }
+        $list = $this->getMainList($filters);
         $list->show($this);
     }
     
