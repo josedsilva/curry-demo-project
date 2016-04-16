@@ -18,6 +18,24 @@ class Company extends BaseCompany
     const QUOTE_MAIL_TPL_ID = 8;
     const BUY_QUOTE_PAGE_LINK = 'demo/buy-quote/';
     
+    public function toTwig()
+    {
+        $ret = array_merge($this->toArray(), $this->getVirtualColumns());
+        $ret['PrimaryKey'] = $this->getPrimaryKey();
+        $ret['AgreementQuotes'] = new Curry_OnDemand(array($this, 'getAgreementQuotes'));
+        
+        return $ret;
+    }
+    
+    public function getAgreementQuotes()
+    {
+        return QuoteQuery::create('q')
+            ->useQuoteCompanyQuery()
+                ->filterByCompany($this)
+            ->endUse()
+            ->find();
+    }
+    
     public function sendQuoteMail(Quote $quote, $subject = 'New quote request')
     {
         $mailTpl = PageQuery::create()->findPk(self::QUOTE_MAIL_TPL_ID);

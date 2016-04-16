@@ -1,0 +1,15 @@
+<h2>List of companies</h2>
+
+<ul>
+	{% for company in query %}
+	<li>{{ company.Name }}, agreements: {{ company.NbrAgreements }}
+	{% if company.AgreementQuotes %}
+		<ul>
+			{% for q in company.AgreementQuotes %}
+			<li>Quote: {{ q.Heading }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	</li>
+	{% endfor %}
+</ul>
