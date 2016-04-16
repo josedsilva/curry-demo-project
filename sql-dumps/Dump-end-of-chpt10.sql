@@ -298,7 +298,7 @@ CREATE TABLE `module_data` (
   PRIMARY KEY (`module_data_id`),
   UNIQUE KEY `module_data_U_1` (`page_module_id`,`page_revision_id`,`langcode`),
   KEY `module_data_FI_2` (`page_revision_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -307,7 +307,7 @@ CREATE TABLE `module_data` (
 
 LOCK TABLES `module_data` WRITE;
 /*!40000 ALTER TABLE `module_data` DISABLE KEYS */;
-INSERT INTO `module_data` VALUES (1,1,2,'',NULL,1,'O:21:\"Curry_Module_Includes\":4:{s:9:\"\0*\0minify\";b:0;s:9:\"\0*\0script\";a:2:{i:1;a:5:{s:6:\"source\";s:15:\"js/modernizr.js\";s:4:\"type\";s:15:\"text/javascript\";s:9:\"condition\";s:8:\"lte IE 8\";s:5:\"async\";N;s:5:\"defer\";N;}i:2;a:5:{s:6:\"source\";s:22:\"js/jquery-1-9-1.min.js\";s:4:\"type\";s:15:\"text/javascript\";s:9:\"condition\";s:0:\"\";s:5:\"async\";N;s:5:\"defer\";a:1:{i:0;s:1:\"1\";}}}s:13:\"\0*\0stylesheet\";a:5:{i:1;a:3:{s:6:\"source\";s:13:\"css/reset.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:2;a:3:{s:6:\"source\";s:15:\"css/vanilla.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:3;a:3:{s:6:\"source\";s:14:\"css/styles.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:4;a:3:{s:6:\"source\";s:18:\"css/styles-ie8.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:8:\"lte IE 8\";}i:5;a:3:{s:6:\"source\";s:18:\"css/styles-ie7.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:8:\"lte IE 7\";}}s:15:\"\0*\0inlineScript\";s:0:\"\";}','2016-03-18 20:03:00','2016-03-18 20:24:21'),(2,2,2,'','Modules/Navigation.html.twig',1,'O:23:\"Curry_Module_Navigation\":5:{s:9:\"\0*\0pageId\";s:1:\"1\";s:14:\"\0*\0depthOffset\";s:1:\"0\";s:16:\"\0*\0useParentPage\";s:1:\"0\";s:13:\"\0*\0showHidden\";s:1:\"0\";s:12:\"\0*\0sortOrder\";s:1:\"0\";}','2016-03-18 21:05:18','2016-03-18 21:15:57'),(4,3,2,'',NULL,1,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:13:\"<p><br /></p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:38:50','2016-03-18 21:38:50'),(5,3,4,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:38:\"<p>Some text for the Article page.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:39:22','2016-03-18 21:39:43'),(6,3,3,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:35:\"<p>Some text for the Demo page.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:39:47','2016-03-18 21:40:01'),(7,4,6,'','Modules/QuoteRequest.html.twig',1,'O:27:\"Project_Module_QuoteRequest\":0:{}','2016-03-26 14:18:44','2016-03-26 14:18:44'),(8,5,3,'','Modules/SecondaryNavigation.html.twig',1,'O:23:\"Curry_Module_Navigation\":5:{s:9:\"\0*\0pageId\";s:1:\"5\";s:14:\"\0*\0depthOffset\";s:1:\"0\";s:16:\"\0*\0useParentPage\";s:1:\"0\";s:13:\"\0*\0showHidden\";s:1:\"0\";s:12:\"\0*\0sortOrder\";s:1:\"0\";}','2016-03-27 12:26:21','2016-03-27 12:33:23'),(9,3,6,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:221:\"<p>We created a custom page module named QuoteRequest and attached it to this page. Below is the zend form that enables use to make a quote request. The form will validate input and save the data into the Quote table.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-27 12:41:02','2016-03-27 12:46:21'),(10,6,8,'',NULL,1,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:444:\"<p>Hello {{ company.ContactPerson }},</p>\r\n<p>We have a new quote request for you. Below is some teaser information:</p>\r\n<pre>Heading: {{ quote.Heading }}\r\nService period required: {{ quote.ServicePeriod }}\r\nRecycling type: {{ quote.RecyclingType.Name }}\r\n</pre>\r\n<p>If you find this interesting please click the link below to make an agreement and see the client\'s contact information.</p>\r\n<p><a href=\"{{ buy_quote_link }}\">Buy Quote</a></p>\";s:22:\"\0*\0allowTemplateSyntax\";b:1;}','2016-03-27 17:36:29','2016-03-27 17:46:33'),(11,7,9,'','Modules/BuyQuote.html.twig',1,'O:23:\"Project_Module_BuyQuote\":0:{}','2016-04-03 20:22:45','2016-04-03 20:41:35'),(12,3,9,'',NULL,0,NULL,'2016-04-03 20:48:11','2016-04-03 20:48:11');
+INSERT INTO `module_data` VALUES (1,1,2,'',NULL,1,'O:21:\"Curry_Module_Includes\":4:{s:9:\"\0*\0minify\";b:0;s:9:\"\0*\0script\";a:2:{i:1;a:5:{s:6:\"source\";s:15:\"js/modernizr.js\";s:4:\"type\";s:15:\"text/javascript\";s:9:\"condition\";s:8:\"lte IE 8\";s:5:\"async\";N;s:5:\"defer\";N;}i:2;a:5:{s:6:\"source\";s:22:\"js/jquery-1-9-1.min.js\";s:4:\"type\";s:15:\"text/javascript\";s:9:\"condition\";s:0:\"\";s:5:\"async\";N;s:5:\"defer\";a:1:{i:0;s:1:\"1\";}}}s:13:\"\0*\0stylesheet\";a:5:{i:1;a:3:{s:6:\"source\";s:13:\"css/reset.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:2;a:3:{s:6:\"source\";s:15:\"css/vanilla.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:3;a:3:{s:6:\"source\";s:14:\"css/styles.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:0:\"\";}i:4;a:3:{s:6:\"source\";s:18:\"css/styles-ie8.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:8:\"lte IE 8\";}i:5;a:3:{s:6:\"source\";s:18:\"css/styles-ie7.css\";s:5:\"media\";s:3:\"all\";s:9:\"condition\";s:8:\"lte IE 7\";}}s:15:\"\0*\0inlineScript\";s:0:\"\";}','2016-03-18 20:03:00','2016-03-18 20:24:21'),(2,2,2,'','Modules/Navigation.html.twig',1,'O:23:\"Curry_Module_Navigation\":5:{s:9:\"\0*\0pageId\";s:1:\"1\";s:14:\"\0*\0depthOffset\";s:1:\"0\";s:16:\"\0*\0useParentPage\";s:1:\"0\";s:13:\"\0*\0showHidden\";s:1:\"0\";s:12:\"\0*\0sortOrder\";s:1:\"0\";}','2016-03-18 21:05:18','2016-03-18 21:15:57'),(4,3,2,'',NULL,1,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:13:\"<p><br /></p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:38:50','2016-03-18 21:38:50'),(5,3,4,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:38:\"<p>Some text for the Article page.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:39:22','2016-03-18 21:39:43'),(6,3,3,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:35:\"<p>Some text for the Demo page.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-18 21:39:47','2016-03-18 21:40:01'),(7,4,6,'','Modules/QuoteRequest.html.twig',1,'O:27:\"Project_Module_QuoteRequest\":0:{}','2016-03-26 14:18:44','2016-03-26 14:18:44'),(8,5,3,'','Modules/SecondaryNavigation.html.twig',1,'O:23:\"Curry_Module_Navigation\":5:{s:9:\"\0*\0pageId\";s:1:\"5\";s:14:\"\0*\0depthOffset\";s:1:\"0\";s:16:\"\0*\0useParentPage\";s:1:\"0\";s:13:\"\0*\0showHidden\";s:1:\"0\";s:12:\"\0*\0sortOrder\";s:1:\"0\";}','2016-03-27 12:26:21','2016-03-27 12:33:23'),(9,3,6,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:221:\"<p>We created a custom page module named QuoteRequest and attached it to this page. Below is the zend form that enables use to make a quote request. The form will validate input and save the data into the Quote table.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-03-27 12:41:02','2016-03-27 12:46:21'),(10,6,8,'',NULL,1,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:444:\"<p>Hello {{ company.ContactPerson }},</p>\r\n<p>We have a new quote request for you. Below is some teaser information:</p>\r\n<pre>Heading: {{ quote.Heading }}\r\nService period required: {{ quote.ServicePeriod }}\r\nRecycling type: {{ quote.RecyclingType.Name }}\r\n</pre>\r\n<p>If you find this interesting please click the link below to make an agreement and see the client\'s contact information.</p>\r\n<p><a href=\"{{ buy_quote_link }}\">Buy Quote</a></p>\";s:22:\"\0*\0allowTemplateSyntax\";b:1;}','2016-03-27 17:36:29','2016-03-27 17:46:33'),(11,7,9,'','Modules/BuyQuote.html.twig',1,'O:23:\"Project_Module_BuyQuote\":0:{}','2016-04-03 20:22:45','2016-04-03 20:41:35'),(12,3,9,'',NULL,0,NULL,'2016-04-03 20:48:11','2016-04-03 20:48:11'),(13,3,10,'',NULL,NULL,'O:20:\"Curry_Module_Article\":3:{s:9:\"\0*\0editor\";s:0:\"\";s:10:\"\0*\0content\";s:355:\"<p>Here we demonstrate the sandbox capability of Curry CMS. The module that queries companies will pass the query object (ModelCriteria) to the template. In the template we iterate over the result of execution of ModelCriteria. However, there is no PropelObjectCollection available in the template, just an array representation for each Propel object.</p>\";s:22:\"\0*\0allowTemplateSyntax\";b:0;}','2016-04-16 14:30:24','2016-04-16 17:06:26'),(14,8,10,'','Modules/CompanyList.twig',1,'O:26:\"Project_Module_CompanyList\":0:{}','2016-04-16 14:43:02','2016-04-16 14:43:02');
 /*!40000 ALTER TABLE `module_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -447,7 +447,7 @@ CREATE TABLE `page` (
   KEY `page_FI_2` (`working_page_revision_id`),
   KEY `page_FI_3` (`redirect_page_id`),
   KEY `page_FI_4` (`langcode`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +456,7 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'OtjAHQUzVj0RW688','Home','/',1,1,1,1,1,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-16 17:39:13','2016-03-16 17:39:13',1,18,0),(2,'4S34qcD7hddqWw2d','Templates','templates/',0,0,0,2,2,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 11:12:08','2016-03-17 20:41:29',2,11,1),(3,'v7E1C1osoE3QELxG','Demo','templates/demo/',0,0,0,3,3,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 20:05:21','2016-03-17 20:05:22',9,10,2),(4,'3LXqFWNdmDJOsTeh','Article','templates/article/',0,0,0,4,4,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 20:41:29','2016-03-17 20:41:32',7,8,2),(5,'eRW1eMTRxqgyBaF0','Demo','demo/',1,1,1,5,5,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-18 21:12:11','2016-03-27 18:06:28',12,17,1),(6,'TWFxu5njgnnH9unK','QuoteRequest','demo/quoterequest/',1,1,0,6,6,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-26 14:18:18','2016-03-27 12:33:32',13,14,2),(7,'o9FUA3yArYB2viBF','EmailRoot','emailroot/',0,0,0,7,7,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 17:14:26','2016-03-27 17:27:19',3,6,2),(8,'F3qQVQ5JDnlPMDmK','QuoteEmail','emailroot/quoteemail/',0,0,0,8,8,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 17:25:53','2016-03-27 17:30:38',4,5,3),(9,'dCYQNaY0pNTtFPrc','Buy Quote','demo/buy-quote/',0,1,0,9,9,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 18:06:28','2016-03-27 18:06:28',15,16,2);
+INSERT INTO `page` VALUES (1,'OtjAHQUzVj0RW688','Home','/',1,1,1,1,1,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-16 17:39:13','2016-03-16 17:39:13',1,20,0),(2,'4S34qcD7hddqWw2d','Templates','templates/',0,0,0,2,2,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 11:12:08','2016-03-17 20:41:29',2,11,1),(3,'v7E1C1osoE3QELxG','Demo','templates/demo/',0,0,0,3,3,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 20:05:21','2016-03-17 20:05:22',9,10,2),(4,'3LXqFWNdmDJOsTeh','Article','templates/article/',0,0,0,4,4,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-17 20:41:29','2016-03-17 20:41:32',7,8,2),(5,'eRW1eMTRxqgyBaF0','Demo','demo/',1,1,1,5,5,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-18 21:12:11','2016-04-16 14:29:59',12,19,1),(6,'TWFxu5njgnnH9unK','QuoteRequest','demo/quoterequest/',1,1,0,6,6,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-26 14:18:18','2016-03-27 12:33:32',13,14,2),(7,'o9FUA3yArYB2viBF','EmailRoot','emailroot/',0,0,0,7,7,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 17:14:26','2016-03-27 17:27:19',3,6,2),(8,'F3qQVQ5JDnlPMDmK','QuoteEmail','emailroot/quoteemail/',0,0,0,8,8,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 17:25:53','2016-03-27 17:30:38',4,5,3),(9,'dCYQNaY0pNTtFPrc','Buy Quote','demo/buy-quote/',0,1,0,9,9,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-03-27 18:06:28','2016-03-27 18:06:28',15,16,2),(10,'CnOej8af5nCQAJCp','Companies','demo/companies/',1,1,1,10,10,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,'2016-04-16 14:29:59','2016-04-16 14:29:59',17,18,2);
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -546,7 +546,7 @@ CREATE TABLE `page_module` (
   PRIMARY KEY (`page_module_id`),
   UNIQUE KEY `page_module_U_1` (`uid`),
   KEY `page_module_FI_1` (`page_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -555,7 +555,7 @@ CREATE TABLE `page_module` (
 
 LOCK TABLES `page_module` WRITE;
 /*!40000 ALTER TABLE `page_module` DISABLE KEYS */;
-INSERT INTO `page_module` VALUES (1,'Mk8p64ZIFEqaREKj',2,'Includes','void','Curry_Module_Includes',0,1,'2016-03-18 20:03:00','2016-03-18 20:03:00'),(2,'TuUffHmXHzoRTYc5',2,'Navigation','primary-navigation','Curry_Module_Navigation',0,0,'2016-03-18 21:05:18','2016-03-18 21:05:18'),(3,'6FRD4p0iqmerUjVC',2,'Article','article','Curry_Module_Article',1,1,'2016-03-18 21:38:50','2016-03-18 21:38:50'),(4,'xDToUCKJqxreLgJx',6,'QuoteRequest','content','Project_Module_QuoteRequest',1,1,'2016-03-26 14:18:44','2016-03-26 14:18:44'),(5,'lmxLsoXZfn6apBMr',3,'SecondaryNavigation','demo-pages','Curry_Module_Navigation',0,0,'2016-03-27 12:26:21','2016-03-27 12:26:21'),(6,'1LSlTiQLIKYvRBaR',8,'Article','content','Curry_Module_Article',1,0,'2016-03-27 17:36:29','2016-03-27 17:36:29'),(7,'zEl9shwTSDsrDlM0',9,'BuyQuote','content','Project_Module_BuyQuote',0,0,'2016-04-03 20:22:45','2016-04-03 20:22:45');
+INSERT INTO `page_module` VALUES (1,'Mk8p64ZIFEqaREKj',2,'Includes','void','Curry_Module_Includes',0,1,'2016-03-18 20:03:00','2016-03-18 20:03:00'),(2,'TuUffHmXHzoRTYc5',2,'Navigation','primary-navigation','Curry_Module_Navigation',0,0,'2016-03-18 21:05:18','2016-03-18 21:05:18'),(3,'6FRD4p0iqmerUjVC',2,'Article','article','Curry_Module_Article',1,1,'2016-03-18 21:38:50','2016-03-18 21:38:50'),(4,'xDToUCKJqxreLgJx',6,'QuoteRequest','content','Project_Module_QuoteRequest',1,1,'2016-03-26 14:18:44','2016-03-26 14:18:44'),(5,'lmxLsoXZfn6apBMr',3,'SecondaryNavigation','demo-pages','Curry_Module_Navigation',0,0,'2016-03-27 12:26:21','2016-03-27 12:26:21'),(6,'1LSlTiQLIKYvRBaR',8,'Article','content','Curry_Module_Article',1,0,'2016-03-27 17:36:29','2016-03-27 17:36:29'),(7,'zEl9shwTSDsrDlM0',9,'BuyQuote','content','Project_Module_BuyQuote',0,0,'2016-04-03 20:22:45','2016-04-03 20:22:45'),(8,'q7zrtToXalKo2IP9',10,'CompanyList','content','Project_Module_CompanyList',0,0,'2016-04-16 14:43:02','2016-04-16 14:46:32');
 /*!40000 ALTER TABLE `page_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -579,7 +579,7 @@ CREATE TABLE `page_revision` (
   PRIMARY KEY (`page_revision_id`),
   KEY `page_revision_FI_1` (`page_id`),
   KEY `page_revision_FI_2` (`base_page_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -588,7 +588,7 @@ CREATE TABLE `page_revision` (
 
 LOCK TABLES `page_revision` WRITE;
 /*!40000 ALTER TABLE `page_revision` DISABLE KEYS */;
-INSERT INTO `page_revision` VALUES (1,1,NULL,4,'Base (auto-created)',NULL,'2016-03-16 17:39:13','2016-03-16 17:39:13','2016-03-18 21:15:48'),(2,2,'GenericPage.html.twig',NULL,'Base (auto-created)',NULL,'2016-03-17 11:12:09','2016-03-17 11:12:09','2016-03-18 21:15:57'),(3,3,'Demo.html.twig',2,'Base (auto-created)',NULL,'2016-03-17 20:05:22','2016-03-17 20:05:22','2016-03-27 12:33:23'),(4,4,'Article.html.twig',2,'Base (auto-created)',NULL,'2016-03-17 20:41:29','2016-03-17 20:41:29','2016-03-18 21:39:43'),(5,5,NULL,3,'Base (auto-created)',NULL,'2016-03-18 21:12:11','2016-03-18 21:12:11','2016-03-18 21:12:11'),(6,6,NULL,5,'Base (auto-created)',NULL,'2016-03-26 14:18:19','2016-03-26 14:18:19','2016-03-27 12:46:21'),(7,7,'Emails/EmailRoot.twig',NULL,'Base (auto-created)',NULL,'2016-03-27 17:14:26','2016-03-27 17:14:26','2016-03-27 17:18:45'),(8,8,NULL,7,'Base (auto-created)',NULL,'2016-03-27 17:25:53','2016-03-27 17:25:53','2016-03-27 17:46:33'),(9,9,NULL,5,'Base (auto-created)',NULL,'2016-03-27 18:06:28','2016-03-27 18:06:28','2016-04-03 20:48:11');
+INSERT INTO `page_revision` VALUES (1,1,NULL,4,'Base (auto-created)',NULL,'2016-03-16 17:39:13','2016-03-16 17:39:13','2016-03-18 21:15:48'),(2,2,'GenericPage.html.twig',NULL,'Base (auto-created)',NULL,'2016-03-17 11:12:09','2016-03-17 11:12:09','2016-03-18 21:15:57'),(3,3,'Demo.html.twig',2,'Base (auto-created)',NULL,'2016-03-17 20:05:22','2016-03-17 20:05:22','2016-03-27 12:33:23'),(4,4,'Article.html.twig',2,'Base (auto-created)',NULL,'2016-03-17 20:41:29','2016-03-17 20:41:29','2016-03-18 21:39:43'),(5,5,NULL,3,'Base (auto-created)',NULL,'2016-03-18 21:12:11','2016-03-18 21:12:11','2016-03-18 21:12:11'),(6,6,NULL,5,'Base (auto-created)',NULL,'2016-03-26 14:18:19','2016-03-26 14:18:19','2016-03-27 12:46:21'),(7,7,'Emails/EmailRoot.twig',NULL,'Base (auto-created)',NULL,'2016-03-27 17:14:26','2016-03-27 17:14:26','2016-03-27 17:18:45'),(8,8,NULL,7,'Base (auto-created)',NULL,'2016-03-27 17:25:53','2016-03-27 17:25:53','2016-03-27 17:46:33'),(9,9,NULL,5,'Base (auto-created)',NULL,'2016-03-27 18:06:28','2016-03-27 18:06:28','2016-04-03 20:48:11'),(10,10,NULL,5,'Base (auto-created)',NULL,'2016-04-16 14:29:59','2016-04-16 14:29:59','2016-04-16 17:06:26');
 /*!40000 ALTER TABLE `page_revision` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -635,7 +635,7 @@ CREATE TABLE `quote` (
   PRIMARY KEY (`quote_id`),
   KEY `quote_FI_1` (`recycling_type_id`),
   KEY `quote_FI_2` (`client_city_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -644,7 +644,7 @@ CREATE TABLE `quote` (
 
 LOCK TABLES `quote` WRITE;
 /*!40000 ALTER TABLE `quote` DISABLE KEYS */;
-INSERT INTO `quote` VALUES (1,1,'Test quote 1',0,3,'Jose Dsilva','jose.dsilva@bombayworks.se','123456',1,'2016-03-27 12:17:04','2016-03-29 19:16:04');
+INSERT INTO `quote` VALUES (1,1,'Test quote 1',0,3,'Jose Dsilva','jose.dsilva@bombayworks.se','123456',1,'2016-03-27 12:17:04','2016-03-29 19:16:04'),(2,0,'Another quote',0,1,'Peter Andrews','peter@gmail.com','125678945',1,'2016-04-08 22:07:09','2016-04-08 22:09:13');
 /*!40000 ALTER TABLE `quote` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -671,6 +671,7 @@ CREATE TABLE `quote_company` (
 
 LOCK TABLES `quote_company` WRITE;
 /*!40000 ALTER TABLE `quote_company` DISABLE KEYS */;
+INSERT INTO `quote_company` VALUES (1,1,NULL,NULL);
 /*!40000 ALTER TABLE `quote_company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -742,7 +743,7 @@ CREATE TABLE `revision_module` (
 
 LOCK TABLES `revision_module` WRITE;
 /*!40000 ALTER TABLE `revision_module` DISABLE KEYS */;
-INSERT INTO `revision_module` VALUES (1,2),(2,2),(3,2),(4,6),(5,3),(6,8),(7,9);
+INSERT INTO `revision_module` VALUES (1,2),(2,2),(3,2),(4,6),(5,3),(6,8),(7,9),(8,10);
 /*!40000 ALTER TABLE `revision_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -857,4 +858,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-03 21:25:24
+-- Dump completed on 2016-04-16 17:06:41
