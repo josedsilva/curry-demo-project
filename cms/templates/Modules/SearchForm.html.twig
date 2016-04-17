@@ -1,0 +1,8 @@
+<form method="get" action="demo/search/results/">
+	<dl>
+		<dt><label for="query">Query</label></dt>
+		<dd><input id="query" type="text" name="query" required value="{{ curry.request.get.query }}" /></dd>
+		<dt></dt>
+		<dd><button type="submit">Search</button></dd>
+	</dl>
+</form>

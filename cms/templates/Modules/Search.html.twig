@@ -1,0 +1,7 @@
+<h2>Search results</h2>
+<dl>
+	{% for hit in hits %}
+	<dt><a href="{{hit.Url}}">{{hit.Title}}</a></dt>
+	<dd>{{hit.Snippet|raw}}</dd>
+	{% endfor %}
+</dl>
