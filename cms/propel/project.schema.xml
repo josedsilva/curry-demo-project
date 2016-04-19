@@ -29,6 +29,8 @@
 		<validator column="email">
 			<rule name="match" value="/^.+@.+\..+$/" message="Please enter a valid email address." />
 		</validator>
+		
+		<behavior name="sluggable" />
 	</table>
 	
 	<!-- Many-Many relationship between companies and recycling types -->

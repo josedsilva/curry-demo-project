@@ -1,0 +1,4 @@
+{% set iterator = q.Iterator %}
+{% set company = iterator.current %}
+
+{{ company.Body | raw }}

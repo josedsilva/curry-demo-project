@@ -13,7 +13,7 @@
  *
  * @package    propel.generator.project
  */
-class Company extends BaseCompany
+class Company extends BaseCompany implements Curry_ISearchable
 {
     const QUOTE_MAIL_TPL_ID = 8;
     const BUY_QUOTE_PAGE_LINK = 'demo/buy-quote/';
@@ -23,8 +23,53 @@ class Company extends BaseCompany
         $ret = array_merge($this->toArray(), $this->getVirtualColumns());
         $ret['PrimaryKey'] = $this->getPrimaryKey();
         $ret['AgreementQuotes'] = new Curry_OnDemand(array($this, 'getAgreementQuotes'));
+        $ret['Body'] = new Curry_OnDemand(array($this, 'getBody'));
         
         return $ret;
+    }
+    
+    /**
+     * Return a document to index or null to
+     * skip indexing this object.
+     * @return Zend_Search_Lucene_Document
+     */
+    public function getSearchDocument()
+    {
+        $doc = new Zend_Search_Lucene_Document();
+        $doc->addField(Zend_Search_Lucene_Field::Text('title', $this->getName()));
+        // if we had some description field, we could use it here.
+        $doc->addField(Zend_Search_Lucene_Field::Text('description', strip_tags($this->getName())));
+        $doc->addField(Zend_Search_Lucene_Field::Text('body', strip_tags($this->getBody())));
+        $doc->addField(Zend_Search_Lucene_Field::Keyword('url', $this->getUrl()));
+        return $doc;
+    }
+    
+    public function getBody()
+    {
+        $html=<<<HTML
+<p>Company Name: {$this->getName()}<br />
+Org Nbr: {$this->getOrgNumber()}<br />
+City: {$this->getCity()->getName()}<br />
+Recycling types: {$this->getRecyclingTypeList()}</p>
+HTML;
+        return $html;
+    }
+    
+    public function getRecyclingTypeList()
+    {
+        $list = RecyclingTypeQuery::create()
+            ->useCoRtQuery()
+                ->filterByCompany($this)
+            ->endUse()
+            ->find()
+            ->toKeyValue('PrimaryKey', 'Name');
+        
+        return implode(', ', $list);
+    }
+    
+    public function getUrl()
+    {
+        return 'demo/company/'.$this->getSlug().'/';
     }
     
     public function getAgreementQuotes()

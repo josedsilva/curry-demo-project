@@ -27,6 +27,8 @@ class Project_Backend_Companies extends Curry_Backend
         $mf = new Curry_Form_ModelForm('Company', array(
             'withRelations' => array('City'),
             'columnElements' => array(
+                // don't show this field in the form
+                'slug' => false,
                 'relation__city' => array('select', array(
                     'label' => 'City',
                     'multiOptions' => array(null => '[ Select ]') + CityQuery::create()
