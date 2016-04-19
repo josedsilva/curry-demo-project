@@ -1,0 +1,6 @@
+{% for company in q %}
+{{ company.Body | raw }}
+{% if not loop.last %}
+<hr />
+{% endif %}
+{% endfor %}
