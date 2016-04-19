@@ -4,6 +4,8 @@
 	<table name="city">
 		<column name="city_id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
 		<column name="name" required="true" primaryString="true" />
+		
+		<behavior name="sluggable" />
 	</table>
 	
 	<table name="recycling_type">
