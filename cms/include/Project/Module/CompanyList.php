@@ -14,4 +14,10 @@ class Project_Module_CompanyList extends Curry_Module
             'query' => $q,
         );
     }
+    
+    public function getInlineCommands($commands)
+    {
+        $commands['edit']['Url'] = (string) url('admin.php', array('module' => 'Project_Backend_Companies'));
+        return $commands;
+    }
 }

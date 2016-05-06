@@ -2,6 +2,8 @@
 
 <ul data-module-id="{{ module.Id }}">
 	{% for company in query %}
+	{% set item = company.PrimaryKey %}
+	{% ia module='Project_Backend_Companies',action='edit',item=item %}
 	<li>{{ company.Name }}, agreements: {{ company.NbrAgreements }}
 	{% if company.AgreementQuotes %}
 		<ul>
@@ -11,5 +13,6 @@
 		</ul>
 	{% endif %}
 	</li>
+	{% endia %}
 	{% endfor %}
 </ul>
