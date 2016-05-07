@@ -1,5 +1,5 @@
-# Curry cms demo project
+# Curry CMS demo
 
-A simple website project that demonstrates some of the capabilities of Curry cms.
+A simple application that demonstrates some of the capabilities of Curry CMS.
 
-Please follow the tutorial and documentation for this demo project at https://josedsilva.gitbooks.io/curry-demo-project/content/
+Please follow the tutorial and documentation for this demo at https://josedsilva.gitbooks.io/curry-cms-docs/content/
